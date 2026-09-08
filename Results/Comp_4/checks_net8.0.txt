@@ -1,0 +1,49 @@
+Вопрос 1. Свёртка литерала в константу
+  ок   EqualsLiteral / EqualsOpaque на «content-length»: True и True
+  ок   EmptyByLiteral / EmptyByOpaque на «content-length»: False и False
+  ок   EmptyByLiteral / EmptyByLength на «content-length»: False и False
+  ок   StartsWithChar / StartsWithText на «content-length»: True и True
+  ок   EqualsLiteral / EqualsOpaque на «content-lengtX»: False и False
+  ок   EmptyByLiteral / EmptyByOpaque на «content-lengtX»: False и False
+  ок   EmptyByLiteral / EmptyByLength на «content-lengtX»: False и False
+  ок   StartsWithChar / StartsWithText на «content-lengtX»: True и True
+  ок   EqualsLiteral / EqualsOpaque на «Xontent-length»: False и False
+  ок   EmptyByLiteral / EmptyByOpaque на «Xontent-length»: False и False
+  ок   EmptyByLiteral / EmptyByLength на «Xontent-length»: False и False
+  ок   StartsWithChar / StartsWithText на «Xontent-length»: False и False
+  ок   EqualsLiteral / EqualsOpaque на «»: False и False
+  ок   EmptyByLiteral / EmptyByOpaque на «»: True и True
+  ок   EmptyByLiteral / EmptyByLength на «»: True и True
+  ок   StartsWithChar / StartsWithText на «»: False и False
+  ок   EqualsLiteral / EqualsOpaque на «c»: False и False
+  ок   EmptyByLiteral / EmptyByOpaque на «c»: False и False
+  ок   EmptyByLiteral / EmptyByLength на «c»: False и False
+  ок   StartsWithChar / StartsWithText на «c»: True и True
+
+Вопрос 2. Ветка по признаку «тип содержит ссылки»
+  ок   список ссылок: ссылок в массиве после очистки: получено 0, ожидалось 0
+  ок   значимый тип со ссылкой: ссылок после очистки: получено 0, ожидалось 0
+  ок   список чисел: значений в массиве после очистки: получено 16, ожидалось 16
+  ок   значимый тип без ссылок: значений после очистки: получено 16, ожидалось 16
+
+Вопрос 3. Лесенка сравнений типа
+  ок   Ladder<int>: получено 13, ожидалось 13
+  ок   Ladder<double>: получено 13, ожидалось 13
+  ок   Ladder<Unlisted>: получено 13, ожидалось 13
+  ок   Ladder<string>: получено 1, ожидалось 1
+  ок   Ladder<object>: получено 2, ожидалось 2
+
+Вопрос 4. Проверка возможностей процессора
+  ок   сумма на 64: получено 2016, ожидалось 2016
+  ок   сумма на 1024: получено 523776, ожидалось 523776
+  ок   сумма на 16384: получено 134209536, ожидалось 134209536
+
+Вопрос 5. Размещение объекта на стеке
+  ок   BoxStays: получено 42, ожидалось 42
+  ок   BoxEscapes: получено 42, ожидалось 42
+  ок   ArrayStays: получено 170, ожидалось 170
+  ок   ArrayEscapes: получено 170, ожидалось 170
+  ок   ArrayOnStack: получено 170, ожидалось 170
+  ок   последнее ушедшее в поле: получено 83, ожидалось 83
+
+СВЕРКА ПРОЙДЕНА

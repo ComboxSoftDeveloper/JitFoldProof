@@ -1,0 +1,27 @@
+Размер тела метода в байтах промежуточного языка
+
+  ArrayEscapes        51
+  ArrayOnStack        100
+  ArrayStays          45
+  BoxEscapes          34
+  BoxStays            28
+  ClearNumbers        7
+  ClearPairs          7
+  ClearPoints         7
+  ClearWords          7
+  EmptyByLength       10
+  EmptyByLiteral      12
+  EmptyByOpaque       8
+  EqualsLiteral       12
+  EqualsOpaque        8
+  Ladder              431
+  ResetWorkCalls      8
+  StartsWithChar      9
+  StartsWithText      13
+  SumGuarded          95
+  SumScalar           24
+  Work                15
+  get_LastEscaped     36
+  get_WorkCalls       6
+
+Способов прочитано: 23

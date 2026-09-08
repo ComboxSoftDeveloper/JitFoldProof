@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>JitFoldProof.Benchmarks.ClearBench-20260907-121542</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.19045.6466/22H2/2022Update)
+Intel Core i9-10900KF CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK 11.0.100-preview.5.26302.115
+  [Host] : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+  net10  : .NET 10.0.11 (10.0.11, 10.0.1126.37416), X64 RyuJIT x86-64-v3
+  net8   : .NET 8.0.30 (8.0.30, 8.0.3026.36720), X64 RyuJIT x86-64-v3
+  net9   : .NET 9.0.19 (9.0.19, 9.0.1926.36724), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>InvocationCount=1  UnrollFactor=1  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Size</th><th>Mean    </th><th>Error </th><th>StdDev </th><th>Median  </th><th>Ratio</th><th>RatioSD</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Numbers</td><td>net10</td><td>net10</td><td>10000</td><td>147.0 ns</td><td>17.01 ns</td><td>50.16 ns</td><td>100.0 ns</td><td>1.12</td><td>0.54</td><td>77 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Words</td><td>net10</td><td>net10</td><td>10000</td><td>2,778.6 ns</td><td>48.03 ns</td><td>42.58 ns</td><td>2,800.0 ns</td><td>21.26</td><td>6.94</td><td>102 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Points</td><td>net10</td><td>net10</td><td>10000</td><td>131.0 ns</td><td>15.76 ns</td><td>46.48 ns</td><td>100.0 ns</td><td>1.00</td><td>0.50</td><td>104 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Pairs</td><td>net10</td><td>net10</td><td>10000</td><td>5,220.0 ns</td><td>59.93 ns</td><td>56.06 ns</td><td>5,200.0 ns</td><td>39.93</td><td>13.04</td><td>147 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Numbers</td><td>net8</td><td>net8</td><td>10000</td><td>158.0 ns</td><td>16.82 ns</td><td>49.60 ns</td><td>200.0 ns</td><td>1.21</td><td>0.56</td><td>77 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Words</td><td>net8</td><td>net8</td><td>10000</td><td>2,830.0 ns</td><td>57.05 ns</td><td>65.69 ns</td><td>2,800.0 ns</td><td>21.65</td><td>7.08</td><td>102 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Points</td><td>net8</td><td>net8</td><td>10000</td><td>178.1 ns</td><td>14.40 ns</td><td>41.56 ns</td><td>200.0 ns</td><td>1.36</td><td>0.56</td><td>168 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Pairs</td><td>net8</td><td>net8</td><td>10000</td><td>5,140.0 ns</td><td>54.21 ns</td><td>50.71 ns</td><td>5,100.0 ns</td><td>39.32</td><td>12.84</td><td>168 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Numbers</td><td>net9</td><td>net9</td><td>10000</td><td>139.0 ns</td><td>16.63 ns</td><td>49.02 ns</td><td>100.0 ns</td><td>1.06</td><td>0.52</td><td>77 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Words</td><td>net9</td><td>net9</td><td>10000</td><td>2,770.6 ns</td><td>57.25 ns</td><td>58.79 ns</td><td>2,800.0 ns</td><td>21.20</td><td>6.93</td><td>102 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Points</td><td>net9</td><td>net9</td><td>10000</td><td>100.0 ns</td><td>0.00 ns</td><td>0.00 ns</td><td>100.0 ns</td><td>0.77</td><td>0.25</td><td>104 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Pairs</td><td>net9</td><td>net9</td><td>10000</td><td>5,220.0 ns</td><td>59.93 ns</td><td>56.06 ns</td><td>5,200.0 ns</td><td>39.93</td><td>13.04</td><td>147 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Numbers</td><td>net10</td><td>net10</td><td>100000</td><td>423.7 ns</td><td>79.23 ns</td><td>224.77 ns</td><td>300.0 ns</td><td>1.32</td><td>1.11</td><td>77 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Words</td><td>net10</td><td>net10</td><td>100000</td><td>29,111.5 ns</td><td>1,612.35 ns</td><td>4,413.78 ns</td><td>27,000.0 ns</td><td>90.88</td><td>54.42</td><td>102 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Points</td><td>net10</td><td>net10</td><td>100000</td><td>506.6 ns</td><td>190.24 ns</td><td>554.95 ns</td><td>350.0 ns</td><td>1.58</td><td>2.18</td><td>104 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Pairs</td><td>net10</td><td>net10</td><td>100000</td><td>49,650.0 ns</td><td>548.64 ns</td><td>486.35 ns</td><td>49,300.0 ns</td><td>155.00</td><td>88.87</td><td>147 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Numbers</td><td>net8</td><td>net8</td><td>100000</td><td>222.2 ns</td><td>38.53 ns</td><td>112.99 ns</td><td>200.0 ns</td><td>0.69</td><td>0.57</td><td>77 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Words</td><td>net8</td><td>net8</td><td>100000</td><td>25,760.0 ns</td><td>491.24 ns</td><td>459.50 ns</td><td>25,600.0 ns</td><td>80.42</td><td>46.13</td><td>102 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Points</td><td>net8</td><td>net8</td><td>100000</td><td>561.1 ns</td><td>142.74 ns</td><td>409.54 ns</td><td>400.0 ns</td><td>1.75</td><td>1.78</td><td>168 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Pairs</td><td>net8</td><td>net8</td><td>100000</td><td>50,026.7 ns</td><td>522.90 ns</td><td>489.12 ns</td><td>50,200.0 ns</td><td>156.18</td><td>89.54</td><td>168 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Numbers</td><td>net9</td><td>net9</td><td>100000</td><td>215.4 ns</td><td>53.93 ns</td><td>151.23 ns</td><td>250.0 ns</td><td>0.67</td><td>0.66</td><td>77 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Words</td><td>net9</td><td>net9</td><td>100000</td><td>25,450.0 ns</td><td>460.20 ns</td><td>359.29 ns</td><td>25,350.0 ns</td><td>79.45</td><td>45.56</td><td>102 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Points</td><td>net9</td><td>net9</td><td>100000</td><td>358.8 ns</td><td>86.99 ns</td><td>252.39 ns</td><td>300.0 ns</td><td>1.12</td><td>1.11</td><td>104 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Pairs</td><td>net9</td><td>net9</td><td>100000</td><td>51,138.9 ns</td><td>964.43 ns</td><td>1,031.93 ns</td><td>51,150.0 ns</td><td>159.65</td><td>91.58</td><td>147 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Numbers</td><td>net10</td><td>net10</td><td>1000000</td><td>413.7 ns</td><td>142.40 ns</td><td>408.58 ns</td><td>400.0 ns</td><td>?</td><td>?</td><td>77 B</td><td>-</td><td>?</td>
+</tr><tr><td>Words</td><td>net10</td><td>net10</td><td>1000000</td><td>730,724.5 ns</td><td>33,017.39 ns</td><td>94,200.48 ns</td><td>707,600.0 ns</td><td>?</td><td>?</td><td>68 B</td><td>-</td><td>?</td>
+</tr><tr><td>Points</td><td>net10</td><td>net10</td><td>1000000</td><td>458.8 ns</td><td>138.30 ns</td><td>401.24 ns</td><td>300.0 ns</td><td>?</td><td>?</td><td>104 B</td><td>-</td><td>?</td>
+</tr><tr><td>Pairs</td><td>net10</td><td>net10</td><td>1000000</td><td>1,476,401.0 ns</td><td>37,938.99 ns</td><td>109,462.66 ns</td><td>1,491,800.0 ns</td><td>?</td><td>?</td><td>178 B</td><td>-</td><td>?</td>
+</tr><tr><td>Numbers</td><td>net8</td><td>net8</td><td>1000000</td><td>577.3 ns</td><td>159.71 ns</td><td>463.34 ns</td><td>600.0 ns</td><td>?</td><td>?</td><td>77 B</td><td>-</td><td>?</td>
+</tr><tr><td>Words</td><td>net8</td><td>net8</td><td>1000000</td><td>560,744.9 ns</td><td>21,982.31 ns</td><td>64,123.43 ns</td><td>565,400.0 ns</td><td>?</td><td>?</td><td>151 B</td><td>-</td><td>?</td>
+</tr><tr><td>Points</td><td>net8</td><td>net8</td><td>1000000</td><td>622.7 ns</td><td>153.06 ns</td><td>444.06 ns</td><td>600.0 ns</td><td>?</td><td>?</td><td>168 B</td><td>-</td><td>?</td>
+</tr><tr><td>Pairs</td><td>net8</td><td>net8</td><td>1000000</td><td>1,462,006.1 ns</td><td>50,406.64 ns</td><td>147,833.96 ns</td><td>1,444,200.0 ns</td><td>?</td><td>?</td><td>211 B</td><td>-</td><td>?</td>
+</tr><tr><td>Numbers</td><td>net9</td><td>net9</td><td>1000000</td><td>615.6 ns</td><td>191.25 ns</td><td>551.81 ns</td><td>400.0 ns</td><td>?</td><td>?</td><td>77 B</td><td>-</td><td>?</td>
+</tr><tr><td>Words</td><td>net9</td><td>net9</td><td>1000000</td><td>723,051.1 ns</td><td>25,697.61 ns</td><td>72,480.56 ns</td><td>719,050.0 ns</td><td>?</td><td>?</td><td>151 B</td><td>-</td><td>?</td>
+</tr><tr><td>Points</td><td>net9</td><td>net9</td><td>1000000</td><td>512.2 ns</td><td>164.78 ns</td><td>480.66 ns</td><td>500.0 ns</td><td>?</td><td>?</td><td>104 B</td><td>-</td><td>?</td>
+</tr><tr><td>Pairs</td><td>net9</td><td>net9</td><td>1000000</td><td>1,390,275.3 ns</td><td>40,701.93 ns</td><td>118,083.68 ns</td><td>1,395,900.0 ns</td><td>?</td><td>?</td><td>208 B</td><td>-</td><td>?</td>
+</tr></tbody></table>
+</body>
+</html>

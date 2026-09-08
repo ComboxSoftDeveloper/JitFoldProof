@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>JitFoldProof.Benchmarks.EscapeBench-20260907-123833</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.20348.5386)
+Intel Xeon Silver 4314 CPU 2.40GHz, 2 CPU, 64 logical and 32 physical cores
+.NET SDK 11.0.100-preview.5.26302.115
+  [Host] : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net10  : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net8   : .NET 8.0.16 (8.0.16, 8.0.1625.21506), X64 RyuJIT x86-64-v4
+  net9   : .NET 9.0.5 (9.0.5, 9.0.525.21509), X64 RyuJIT x86-64-v4
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>BoxStays</td><td>net10</td><td>net10</td><td>0.7362 ns</td><td>0.0520 ns</td><td>0.0487 ns</td><td>1.00</td><td>0.09</td><td>-</td><td>13 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BoxEscapes</td><td>net10</td><td>net10</td><td>8.2448 ns</td><td>0.1203 ns</td><td>0.1067 ns</td><td>11.24</td><td>0.69</td><td>0.0019</td><td>63 B</td><td>24 B</td><td>NA</td>
+</tr><tr><td>ArrayStays</td><td>net10</td><td>net10</td><td>1.1331 ns</td><td>0.0391 ns</td><td>0.0365 ns</td><td>1.54</td><td>0.10</td><td>-</td><td>104 B</td><td>-</td><td>NA</td>
+</tr><tr><td>ArrayEscapes</td><td>net10</td><td>net10</td><td>9.5997 ns</td><td>0.2202 ns</td><td>0.2163 ns</td><td>13.09</td><td>0.83</td><td>0.0032</td><td>93 B</td><td>40 B</td><td>NA</td>
+</tr><tr><td>ArrayOnStack</td><td>net10</td><td>net10</td><td>1.7995 ns</td><td>0.0300 ns</td><td>0.0280 ns</td><td>2.45</td><td>0.15</td><td>-</td><td>106 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BoxStays</td><td>net8</td><td>net8</td><td>4.6690 ns</td><td>0.1309 ns</td><td>0.2900 ns</td><td>6.37</td><td>0.55</td><td>0.0019</td><td>50 B</td><td>24 B</td><td>NA</td>
+</tr><tr><td>BoxEscapes</td><td>net8</td><td>net8</td><td>8.0200 ns</td><td>0.1963 ns</td><td>0.3171 ns</td><td>10.93</td><td>0.78</td><td>0.0019</td><td>63 B</td><td>24 B</td><td>NA</td>
+</tr><tr><td>ArrayStays</td><td>net8</td><td>net8</td><td>7.8324 ns</td><td>0.1872 ns</td><td>0.3422 ns</td><td>10.68</td><td>0.79</td><td>0.0032</td><td>71 B</td><td>40 B</td><td>NA</td>
+</tr><tr><td>ArrayEscapes</td><td>net8</td><td>net8</td><td>8.9275 ns</td><td>0.2152 ns</td><td>0.3350 ns</td><td>12.17</td><td>0.86</td><td>0.0032</td><td>93 B</td><td>40 B</td><td>NA</td>
+</tr><tr><td>ArrayOnStack</td><td>net8</td><td>net8</td><td>1.8119 ns</td><td>0.0488 ns</td><td>0.0407 ns</td><td>2.47</td><td>0.16</td><td>-</td><td>106 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BoxStays</td><td>net9</td><td>net9</td><td>0.7383 ns</td><td>0.0124 ns</td><td>0.0104 ns</td><td>1.01</td><td>0.06</td><td>-</td><td>13 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BoxEscapes</td><td>net9</td><td>net9</td><td>8.1315 ns</td><td>0.1819 ns</td><td>0.1613 ns</td><td>11.09</td><td>0.70</td><td>0.0019</td><td>63 B</td><td>24 B</td><td>NA</td>
+</tr><tr><td>ArrayStays</td><td>net9</td><td>net9</td><td>5.8660 ns</td><td>0.1211 ns</td><td>0.1296 ns</td><td>8.00</td><td>0.51</td><td>0.0032</td><td>71 B</td><td>40 B</td><td>NA</td>
+</tr><tr><td>ArrayEscapes</td><td>net9</td><td>net9</td><td>9.1450 ns</td><td>0.2039 ns</td><td>0.1908 ns</td><td>12.47</td><td>0.79</td><td>0.0032</td><td>93 B</td><td>40 B</td><td>NA</td>
+</tr><tr><td>ArrayOnStack</td><td>net9</td><td>net9</td><td>1.6358 ns</td><td>0.0288 ns</td><td>0.0269 ns</td><td>2.23</td><td>0.14</td><td>-</td><td>106 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -5,3 +5,4 @@
 *.md text eol=crlf
 *.bat -text
 Results/** -text
+Results/** linguist-vendored
